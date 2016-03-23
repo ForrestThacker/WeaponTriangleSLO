@@ -1,4 +1,4 @@
-package WTModel;
+package wtModel;
 
 public class WTModel 
 {
@@ -6,12 +6,15 @@ public class WTModel
 	private int losses = 0;
 	private int ties = 0;
 	
-	private static enum GameOutcome
+	public GameOutcome result;
+	
+	public static enum GameOutcome
 	{
 		WIN, LOSE, TIE;
 	}
 	
-	public GameOutcome getGameOutcome(String userChoice, String computerChoice){
+	public GameOutcome getGameOutcome(String userChoice, String computerChoice)
+	{
 		
 		if(userChoice.equalsIgnoreCase("AXE")){
 			
@@ -20,16 +23,19 @@ public class WTModel
 				losses++;
 				return GameOutcome.LOSE;
 			}
-			else if(computerChoice.equalsIgnoreCase("LANCE")){
+			else if(computerChoice.equalsIgnoreCase("LANCE"))
+			{
 				//axes beat lances
 				wins++;
 				return GameOutcome.WIN;
 			}
 		}
 		
-		else if(userChoice.equalsIgnoreCase("SWORD")){
+		else if(userChoice.equalsIgnoreCase("SWORD"))
+		{
 			
-			if(computerChoice.equalsIgnoreCase("LANCE")){
+			if(computerChoice.equalsIgnoreCase("LANCE"))
+			{
 				//lances beat swords
 				losses++;
 				return GameOutcome.LOSE;
@@ -64,18 +70,20 @@ public class WTModel
 	return GameOutcome.TIE;
 	}
 	
-	public String GetRandomChoice(){
+	public String GetRandomChoice()
+	{
 		double d = Math.random();
 		
-		if (d &lt); .33)
+		if (d < .33)
 		{
 			return "AXE";
 		}
-		else if (d &lt; .66)
+		else if (d < .66)
 		{
 			return "SWORD";
 		}
-		else{
+		else
+		{
 			return "LANCE";
 		}
 	}
@@ -93,5 +101,6 @@ public class WTModel
 	public int getTies()
 	{
 		return ties;
-	}		
+	}
+
 }

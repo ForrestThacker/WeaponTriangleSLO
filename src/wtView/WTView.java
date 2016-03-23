@@ -1,15 +1,15 @@
 package wtView;
 
-import WTModel.WTModel;
+import wtModel.WTModel;
 
-public class VTView 
+public class WTView 
 { 
 
 public static void main(String [] args){
 	
 	WTModel model = new WTModel();
 	
-	String choice = model.getRandomChoice();
+	String choice = model.GetRandomChoice();
 	
 	System.out.println(choice);
 	}
